@@ -1,0 +1,25 @@
+function reverseArray(arr){
+  var newArr=[];
+  for (var i =0; i < arr.length;i++)
+    newArr.unshift(arr[i])
+  return newArr
+}
+
+function reverseInPlace(arr){
+  elems = Math.floor(arr.length/2);
+  var bucket =0
+  for (i=0; i<=elems;i++){
+    bucket = arr[i]
+    arr[i]=arr[arr.length-(1+i)]
+    arr[arr.length-(1+i)] = bucket
+  return arr
+  }
+}
+
+function arrayToList(arr){
+  list = null;
+  for (var i=0; i<arr.length;i++){
+    list = {value: arr[arr.length-(i+1)], rest:list} 
+  }
+  return list
+}
